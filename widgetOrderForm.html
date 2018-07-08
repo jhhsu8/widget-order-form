@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Widget Order Form</title>
+        <link rel="stylesheet" type="text/css" href="./css/widgetOrderForm.css" />
+        <script type="text/javascript" src="./script/widgetOrderForm.js"></script>
+    </head>
+        <body>
+            <div id="container">
+                <h1>Widget Order Form</h1>
+                <p class="title">Instructions</p>
+                <ul>
+                    <li>First and last names: Enter only alphabetic characters or spaces.<br />
+                        First name from 2 to 15 characters. Last name from 2 to 25 characters.</li>
+                    <li>Phone number: Enter in (xxx) xxx-xxxx format.</li>
+                    <li>Quantity: Enter up to 99 units.</li>
+                    <li>Sales tax is 8.5%.</li>
+                    <li>Discounts: 
+                        <ul>
+                            <li>1-9 ordered - no discount</li>
+                            <li>10-19 ordered - 10% discount</li>
+                            <li>20-29 ordered - 20% discount</li>
+                            <li>30-39 ordered - 30% discount</li>
+                            <li>40-99 ordered - 40% discount</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="title">Order Form</p>
+                <form action="" method="post" enctype="multipart/form-data" id="orderForm">
+                    <table>
+                        <tr>
+                            <td class="label"><label for="firstname">First Name:</label></td>
+                            <td><input type="text" name="firstname" id="firstname" size="30"  onblur="validateFirstName();" /><span class="prompt" id="firstnameprompt" ></span></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="lastname">Last Name:</label></td>
+                            <td><input type="text" name="lastname" id="lastname" size="30" onblur="validateLastName();" /><span class="prompt" id="lastnameprompt" ></span></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="phonenumber">Phone Number:</label>
+                            </td><td><input type="text" name="phonenumber" id="phonenumber" size="30" onblur="validatePhone();" /><span class="prompt" id="phoneprompt"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="quantity">Quantity:</label></td>
+                            <td><input type="text" name="quantity" id="quantity" size="30" onblur="validateQuantity();" /><span class="prompt" id="quantityprompt"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="unitprice">Unit Price:</label></td>
+                            <td><input type="text" name="unitprice" id="unitprice" size="30" value="$4.95/each" readonly="readonly" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p><span id="submit">Submit</span></p></td>
+                        </tr>
+                    </table> 
+                </form>
+                <p id="orderinfo">Your Order Information:</p>
+                <p id="userinfo"></p>
+                <p id="widgetquantity"></p>
+                <p id="subtotal"></p>
+                <p id="discount"></p>
+                <p id="salestax"></p>
+                <p id="ordertotal"></p>
+            </div>
+        </body>
+</html>
